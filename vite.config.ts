@@ -4,6 +4,7 @@ import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
 import ElementPlus from 'unplugin-element-plus/vite'
 
@@ -12,6 +13,9 @@ import ElementPlus from 'unplugin-element-plus/vite'
 export default defineConfig({
     plugins: [
         vue(),
+
+        // jsx/tsx支持
+        vueJsx(),
 
         // element-plus自动按需引入
         AutoImport({
@@ -31,7 +35,8 @@ export default defineConfig({
     // 开发ip和端口
     server: {
         host: 'localhost',
-        port: 80
+        port: 80,
+        open: true
     },
     css: {
         preprocessorOptions: {

@@ -1,13 +1,21 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    // TSX 语法的类型推导支持
+    // https://cn.vuejs.org/guide/extras/render-function.html#jsx-tsx
+    "jsx": "preserve"
   },
-
   "references": [
     {
       "path": "./tsconfig.config.json"
