@@ -7,11 +7,9 @@
 <script setup lang="ts"></script>
 
 <style lang="less" scoped>
-@import url('@/styles/variables.module.less');
-
 .main-content {
   width: 100%;
-  height: calc(100% - @headerHeight);
+  height: 100%;
   background-color: #f0f2f5;
 }
 </style>
