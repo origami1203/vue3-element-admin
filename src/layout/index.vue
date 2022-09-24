@@ -1,20 +1,23 @@
 <template>
-  <div class="layout-container flex h-screen w-full">
+  <section class="layout-container flex flex-auto h-screen box-border min-w-0">
     <!--侧边栏-->
-    <SideBar class="sidebar-container h-full flex flex-col" :class="collapse? 'collapse':'not-collapse'"/>
+    <SideBar :class="collapse? 'collapse':'not-collapse'"/>
 
-    <div class="main-container w-full" :class="collapse? 'collapse':'not-collapse'">
+    <section class="main-container flex-col flex flex-auto box-border min-w-0" :class="collapse? 'collapse':'not-collapse'">
 
       <!--header-->
-      <div class="header-container flex shadow-md">
+      <header class="header-container flex flex-shrink-0 shadow-md">
         <Header/>
-      </div>
+      </header>
 
-      <!--内容主体-->
-      <ContentBody/>
+      <main class="block flex-auto overflow-auto">
+        <!--内容主体-->
+        <ContentBody/>
+      </main>
 
-    </div>
-  </div>
+    </section>
+  </section>
+
 </template>
 
 <script lang="ts" setup>
@@ -31,29 +34,4 @@ const {collapse} = storeToRefs(app);
 </script>
 
 <style lang="less" scoped>
-@import url('@/styles/variables.module.less');
-
-.layout-container {
-  .sidebar-container {
-    background-color: @sideBarColor;
-    // ease-in-out,与element-plus的菜单折叠动画horizontal-collapse-transition一致,防止动画不同,重影
-    transition: .3s width ease-in-out;
-
-    &.collapse {
-      width: @collapseWidth;
-    }
-
-    &.not-collapse {
-      width: @sideBarWidth;
-    }
-  }
-
-  .main-container {
-    height: 100%;
-
-    .header-container {
-      //height: @headerHeight;
-    }
-  }
-}
 </style>
