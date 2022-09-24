@@ -3,14 +3,14 @@
     <!--侧边栏-->
     <SideBar :class="collapse? 'collapse':'not-collapse'"/>
 
-    <section class="main-container flex-col flex flex-auto box-border min-w-0" :class="collapse? 'collapse':'not-collapse'">
+    <section class="main-container flex-col flex flex-1 box-border min-w-0" :class="collapse? 'collapse':'not-collapse'">
 
       <!--header-->
       <header class="header-container flex flex-shrink-0 shadow-md">
         <Header/>
       </header>
 
-      <main class="block flex-auto overflow-auto">
+      <main class="block flex-1 overflow-auto">
         <!--内容主体-->
         <ContentBody/>
       </main>
